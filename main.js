@@ -42,3 +42,33 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
+
+//prendo l'id dell'oggetto contenente le card
+
+const cardContainer = document.getElementById("team-cards-group");
+
+const generateCard = (name, role, email, image) => {
+  return `            <div class="col bg-black text-white d-flex justify-content-between align-items-center">
+                <img src="./${image}" class="w-25">
+                <div>
+                    <h5 class="fw-bold">${name}</h5>
+                    <p>${role}</p>
+                    <a href="">${email}</a>
+                </div>
+            </div>`;
+};
+
+const generateArrayOfCards = (array) => {
+  let leanToString = ``;
+  array.forEach((element) => {
+    leanToString += generateCard(
+      element.name,
+      element.role,
+      element.email,
+      element.img
+    );
+  });
+  return leanToString;
+};
+
+cardContainer.innerHTML = generateArrayOfCards(teamMembers);

@@ -1,0 +1,18 @@
+/* reset */
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body > * {
+  padding: 0 50px;
+}
+
+h1 {
+  color: #ff0066;
+}
+
+#team-cards-group > * {
+  padding: 0;
+  margin-bottom: 20px;
+}
