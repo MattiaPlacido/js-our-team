@@ -47,11 +47,11 @@ const cardContainer = document.getElementById("team-cards-group");
 
 const generateCard = (name, role, email, image) => {
   return `<div class="col mb-3 px-2">
-      <div class="row g-0">
-        <div class="col-md-4">
+      <div class="row g-0  bg-black ">
+        <div class="col-4">
           <img src="./${image}" class="img-fluid"/>
         </div>
-        <div class="col-md-8 bg-black text-white p-3">
+        <div class="col-8 bg-black text-white p-3">
           <h5 class="fw-bold">${name}</h5>
           <p>${role}</p>
           <a href="">${email}</a>
