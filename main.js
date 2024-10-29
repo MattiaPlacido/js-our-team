@@ -43,19 +43,21 @@ const teamMembers = [
   },
 ];
 
-//prendo l'id dell'oggetto contenente le card
-
 const cardContainer = document.getElementById("team-cards-group");
 
 const generateCard = (name, role, email, image) => {
-  return `            <div class="col bg-black text-white d-flex justify-content-between align-items-center">
-                <img src="./${image}" class="w-25">
-                <div>
-                    <h5 class="fw-bold">${name}</h5>
-                    <p>${role}</p>
-                    <a href="">${email}</a>
-                </div>
-            </div>`;
+  return `<div class="col mb-3 px-2">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="./${image}" class="img-fluid"/>
+        </div>
+        <div class="col-md-8 bg-black text-white p-3">
+          <h5 class="fw-bold">${name}</h5>
+          <p>${role}</p>
+          <a href="">${email}</a>
+        </div>
+      </div>
+    </div>`;
 };
 
 const generateArrayOfCards = (array) => {
@@ -72,3 +74,34 @@ const generateArrayOfCards = (array) => {
 };
 
 cardContainer.innerHTML = generateArrayOfCards(teamMembers);
+
+//ottengo i dati degli input
+const inputButton = document.getElementById("inputButton");
+
+inputButton.addEventListener("click", () => {
+  const name = document.getElementById("inputName");
+  const role = document.getElementById("inputRole");
+  const email = document.getElementById("inputEmail");
+  const img = document.getElementById("inputImg");
+
+  if (name.value != "" && role.value != "" && email.value != "") {
+    if (img.value == "") {
+      // non metto direttamente  * img.value = "indirizzo" * perchè poi l'indirizzo va a piazzarsi visivamente dentro il form che chiede il dato e l'utente lo vede
+      cardContainer.innerHTML += generateCard(
+        name.value,
+        role.value,
+        email.value,
+        "img/default.jpg"
+      );
+    } else {
+      cardContainer.innerHTML += generateCard(
+        name.value,
+        role.value,
+        email.value,
+        img.value
+      );
+    }
+  } else {
+    alert("Inserisci tutti i dati prima di aggiungere un membro!");
+  }
+});

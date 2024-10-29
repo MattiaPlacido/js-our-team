@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <h1 class="text-center my-5">Meet our Team</h1>
-    <p class="text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eos perspiciatis
+    <h1 class="text-center">Meet our Team</h1>
+    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eos perspiciatis
         tempora
         animi
         minima, provident mollitia quo praesentium nihil illum tenetur consectetur nemo vero, excepturi eaque
@@ -23,7 +23,26 @@
         ea
         sint. Unde libero officiis sapiente aperiam quisquam expedita qui, vero deleniti quas aliquam fuga.
     </p>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" id="team-cards-group">
+    <div class="d-flex align-items-center flex-column gap-3">
+        <hr class="w-75">
+        <div class="row row-cols-4">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nome e Cognome" id="inputName">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Ruolo" id="inputRole">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Email" id="inputEmail">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Indirizzo immagine" id="inputImg">
+            </div>
+        </div>
+        <button class="btn btn-primary " id="inputButton">Aggiungi membro</button>
+        <hr class="w-75">
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mx-n2" id="team-cards-group">
 
     </div>
 </body>
